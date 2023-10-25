@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <title>Index</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="script.js" defer></script>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.1.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky
+        src="https://cdn.glitch.global/fdfcd7f5-9d96-45bf-840d-b0bd1e91b766/170311a_Wordie-House_275HDR-Pano.jpg?v=1696304344095"
+      ></a-sky>
+      <a-box
+        color="gray"
+        depth="15"
+        height="10"
+        width="15"
+        position="15.7 2 9"
+        rotation="0 17 0"
+      ></a-box>
+      <a-plane
+        color="red"
+        height="7"
+        width="3"
+        position="12 2 2"
+        rotation="0 -160 1"
+      ></a-plane>
+      <a-text
+        value="Door"
+        color="black"
+        height="15"
+        width="15"
+        position="12 2 1.5"
+        rotation="0 200 0"
+      ></a-text>
+      <a-plane
+        color="green"
+        height="3"
+        width="3"
+        position="8 4 3"
+        rotation="0 -160 1"
+      ></a-plane>
+      <a-text
+        value="Info"
+        color="black"
+        height="15"
+        width="15"
+        position="8 4 2.5"
+        rotation="0 200 0"
+      
+      ></a-text>
+
+      <a-assets>
+        <a-asset-item id="penguin" src="assets/penguin/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-entity 
+        gltf-model="#penguin" 
+        scale="0.005 0.005 0.005" 
+        position="0 -3 -9" 
+        animation-mixer="clip: Walk"
+        animation="property: position; from: 0 -3 -9; to: -5 -3 -6;dir: alternate; dur: 10000; easing: linear; loop: true"
+        animation__rotationForward="property: rotation; to: 0 0 0;dur: 1000; easing: linear; startEvents: rotateForward"
+        animation__rotationBackward="property: rotation; to: 0 -180 0;dur: 1000; easing: linear; startEvents: rotateBackward"
+        rotate-penguin
+      ></a-entity>        
+       
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
